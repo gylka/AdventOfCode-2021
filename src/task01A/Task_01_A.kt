@@ -1,10 +1,8 @@
 package task01A
 
 import java.io.File
-import java.nio.file.Paths
 
 fun main() {
-    println(Paths.get("").toAbsolutePath().toString())
     val lines = File("src//task01A//_input.txt")
         .readLines()
         .filter { l -> l.isNotEmpty() }
