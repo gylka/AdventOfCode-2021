@@ -5,7 +5,7 @@ import java.io.File
 const val ioPath = "src//day01//task1"
 
 fun main() {
-    val lines = File("${ioPath}//_input.txt")
+    val lines = File("$ioPath//_input.txt")
         .readLines()
         .filter { it.isNotEmpty() }
         .map { it.toInt() }
@@ -17,6 +17,6 @@ fun main() {
             counter++
         previous = lines[i]
     }
-    File("${ioPath}//_output.txt").writeText(counter.toString())
+    File("$ioPath//_output.txt").writeText(counter.toString())
     println(counter)
 }
