@@ -1,14 +1,15 @@
 @file:Suppress("DuplicatedCode")
 
-package day02.task1
+package day02.task2
 
 import java.io.File
 
-const val ioPath = "src//day02//task1"
+const val ioPath = "src//day02//task2"
 
 fun main() {
     var horizontal = 0
     var depth = 0
+    var aim = 0
     val lines = File("$ioPath//_input.txt")
         .readLines()
         .filter { it.isNotEmpty() }
@@ -16,9 +17,12 @@ fun main() {
     for (line in lines) {
         val move = parseMovement(line)
         when(move.direction) {
-            Direction.FORWARD -> horizontal += move.distance
-            Direction.UP -> depth -= move.distance
-            Direction.DOWN -> depth += move.distance
+            Direction.FORWARD -> {
+                horizontal += move.distance
+                depth += aim * move.distance
+            }
+            Direction.UP -> aim -= move.distance
+            Direction.DOWN -> aim += move.distance
         }
     }
     File("$ioPath//_output.txt").writeText((horizontal * depth).toString())
