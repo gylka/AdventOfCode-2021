@@ -1,12 +1,14 @@
-package task01A
+package day01.task1
 
 import java.io.File
 
+const val ioPath = "src//day01//task1"
+
 fun main() {
-    val lines = File("src//task01A//_input.txt")
+    val lines = File("${ioPath}//_input.txt")
         .readLines()
-        .filter { l -> l.isNotEmpty() }
-        .map { l -> l.toInt() }
+        .filter { it.isNotEmpty() }
+        .map { it.toInt() }
         .toList()
     var previous = lines[0]
     var counter = 0
@@ -15,6 +17,6 @@ fun main() {
             counter++
         previous = lines[i]
     }
-    File("src//task01A//_output.txt").writeText(counter.toString())
+    File("${ioPath}//_output.txt").writeText(counter.toString())
     println(counter)
 }

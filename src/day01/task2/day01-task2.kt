@@ -1,11 +1,11 @@
-package task01B
+package day01.task2
 
 import java.io.File
 
-const val ioPath = "src//task01B"
+const val ioPath = "src//day01//task2"
 
 fun main() {
-    val lines = File("${ioPath}//_input.txt")
+    val lines = File("$ioPath//_input.txt")
         .readLines()
         .filter { it.isNotEmpty() }
         .map { it.toInt() }
@@ -19,6 +19,6 @@ fun main() {
             counter++
         previous = current
     }
-    File("${ioPath}//_output.txt").writeText(counter.toString())
+    File("$ioPath//_output.txt").writeText(counter.toString())
     println(counter)
 }
