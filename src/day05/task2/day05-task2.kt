@@ -15,15 +15,14 @@ fun main() {
         .toList()
     val matrixSize = lines.maxOf { l -> arrayOf(l.start.x, l.start.y, l.end.x, l.end.y).maxOf { it } }
     val matrix = Matrix(matrixSize + 1)
-    for (line in lines) {
+    for (line in lines)
         matrix.drawLine(line)
-    }
     val result = matrix.getNumberOfCellsWithAtLeast(2)
     File("$ioPath//_output.txt").writeText((result).toString())
     println(result)
 }
 
-@Suppress("unused")
+@Suppress("unused", "RemoveRedundantCallsOfConversionMethods")
 class Matrix(private val size: Int) {
     private val cells = Array(size) { IntArray(size) }
 
@@ -47,12 +46,10 @@ class Matrix(private val size: Int) {
     }
 
     fun getNumberOfCellsWithAtLeast(n: Int): Int {
-        var result = 0
-        for (x in 0 until size)
-            for (y in 0 until size)
-                if (cells[x][y] >= n)
-                    result++
-        return result
+        return cells.sumOf { r -> r
+                .filter { it >= n }
+                .sumOf { if (it >= n) 1 else 0.toInt() }
+            }
     }
 
     override fun toString(): String {

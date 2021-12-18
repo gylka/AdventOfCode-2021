@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Day06 - Task1" type="JetRunConfigurationType">
+    <option name="MAIN_CLASS_NAME" value="day06.task1.Day06_task1Kt" />
+    <module name="AdventOfCode-2021" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
