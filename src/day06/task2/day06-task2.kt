@@ -12,7 +12,7 @@ fun main() {
         .first()
         .split(",")
         .groupingBy {it.toInt()}
-        .fold(0L) {agg, e -> agg + 1L}
+        .fold(0L) {agg, _ -> agg + 1L}
         .toMutableMap()
     for (i in 0..8)
         if (!state.containsKey(i))
