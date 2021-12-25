@@ -2,7 +2,6 @@
 
 package day08.task2
 
-import includes
 import java.io.File
 
 const val ioPath = "src//day08//task2"
@@ -98,4 +97,3 @@ infix fun CharSequence.exclude(c: Char): CharSequence = this.filter { it != c }
 
 fun Map<String, Int>.getForPattern(pattern: String): Int
     = this[keys.first { it includes pattern && it.length == pattern.length }]!!
-
